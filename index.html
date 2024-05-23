@@ -3,30 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="description" content="Base Apparel coming soon page clone">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Base Apparel coming soon page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .footer__attribution { font-size: 11px; text-align: center; }
+    .footer__attribution .attribution__link { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body>
+ <main class="main">
+  <section class="hero">
+    <img src="./images/bg-pattern-desktop.svg" alt="Background pattern" aria-hidden="true" class="hero__bg-pattern">
 
-  We're coming soon
+    <header>
+      <img src="./images/logo.svg" alt="Base Apparel Logo" class="hero__logo">
 
-  Hello fellow shoppers! We're currently building our new fashion store. 
-  Add your email below to stay up-to-date with announcements and our launch deals.
+      <h1 class="hero__header">
+        We're coming soon
+      </h1>
+    
+      <p class="hero__description">
+        Hello fellow shoppers! We're currently building our new fashion store. 
+        Add your email below to stay up-to-date with announcements and our launch deals.
+      </p>
+      
+      <form class="hero__form" method="post" action="#">
+        <label for="email" class="hero__label">Email Address</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email Address"
+          id="email"
+          class="hero__input"
+          required
+        />
+        <button type="submit" aria-label="Submit email" class="hero__button">
+          <img src="./images/icon-arrow.svg" alt="Submit" class="hero__button-icon">
+        </button>
+      </form>
+    </header>
 
-  Email Address
+    <div class="hero__image" aria-hidden="true"></div>
+  </section>
+ </main>
   
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+  <footer class="footer">
+    <p class="footer__attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="attribution__link">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/CardboardPL" class="attribution__link">CardboardPL</a>.
     </p>
   </footer>
 </body>
