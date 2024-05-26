@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" type="text/css" href="./stylesheets/general.css">
   <link rel="stylesheet" type="text/css" href="./stylesheets/coming-soon-page.css">
+  <link rel="stylesheet" type="text/css" href="./stylesheets/utility.css">
   <link rel="stylesheet" type="text/css" href="./stylesheets/attribution.css">
   <script src="./scripts/validateForm.js" type="text/javascript" defer></script>
   
@@ -30,19 +31,22 @@
         Add your email below to stay up-to-date with announcements and our launch deals.
       </p>
       
-      <form class="hero__form" method="post" action="#">
-        <label for="emailInput" class="hero__label">Email Address</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email Address"
-          id="emailInput"
-          class="hero__input"
-          required
-        />
-        <button type="submit" aria-label="Submit email" class="hero__button">
-          <img src="./images/icon-arrow.svg" alt="Submit" class="hero__button-icon">
-        </button>
+      <form class="hero__form" method="post" action="#" novalidate>
+        <div class="hero__form-wrapper">
+          <label for="emailInput" class="hero__label u-sr-only">Email Address</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            id="emailInput"
+            class="hero__input u-border-none u-bg-none"
+            required
+          />
+          <button type="submit" aria-label="Submit email" class="hero__submit-button u-border-none">
+            <img src="./images/icon-arrow.svg" alt="Submit" class="hero__button-icon">
+          </button>
+        </div>
+        <p class="hero__form-error-message hero__form-error-message--hidden" aria-hidden="true">Please provide a valid email</p>
       </form>
     </header>
   </section>
