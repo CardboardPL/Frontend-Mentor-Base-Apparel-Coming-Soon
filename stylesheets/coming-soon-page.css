@@ -1,4 +1,6 @@
 .hero {
+  display: flex;
+  flex-direction: column;
   font-size: 13px;
   background: linear-gradient(var(--gradient-one));
   width: 100%;
@@ -12,17 +14,21 @@
   right: 0;
   bottom: 0;
   left: 0;
+  pointer-events: none;
 }
 
 .hero__logo {
   display: block;
   margin: 31px 32px 32px 32px;
   height: 21px;
+  width: 100.55px;
 }
 
 .hero__image {
   background-image: url("../images/hero-mobile.jpg");
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   width: auto;
   height: 250px;
 }
@@ -32,6 +38,7 @@
   text-align: center;
   position: relative;
   padding: 64px 32px;
+  overflow: hidden;
 }
 
 .hero__title {
@@ -98,13 +105,13 @@
   top: 50%;
   transform: translateY(-50%);
   background: linear-gradient(var(--gradient-two));
-  width: 65px;
+  width: 64px;
   height: 48px;
   border-radius: 32px;
-  box-shadow: 0 8px 1rem hsla(0, 93%, 68%, 0.4);
+  box-shadow: 0 8px 1rem hsla(0, 93%, 68%, 0.3);
   cursor: pointer;
   transition: 
-    background 0.15s ease-in-out
+    background 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
 }
 
@@ -123,4 +130,76 @@
 .hero__form-error-message--hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+@media (min-width: 800px) {
+  .hero {
+    font-size: 1rem;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .hero__logo {
+    position: absolute;
+    top: 65px;
+    left: 165px;
+    height: 33px;
+    width: 158px;
+    margin: 0;
+    z-index: 100;
+  }
+
+  .hero__bg-pattern {
+    display: block;
+    z-index: 1;
+  }
+
+  .hero__image {
+    position: relative;
+    background-image: url("../images/hero-desktop.jpg");
+    height: 100vh;
+    width: 610px;
+  }
+
+  .hero__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 103px 221px 0 165px;
+    text-align: left;
+  }
+
+  .hero__header > *:not(.hero__bg-pattern) {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero__title {
+    font-size: 64px;
+    letter-spacing: 17px;
+    line-height: 1.075;
+    margin-bottom: 19.6px;
+  }
+
+  .hero__description {
+    letter-spacing: 0;
+    line-height: 1.75;
+    margin-left: 1px;
+    margin-bottom: 40px;
+  }
+
+  .hero__form-wrapper {
+    height: 56px;
+  }
+
+  .hero__input {
+    font-size: 17px;
+    letter-spacing: -0.1833333333333333px;
+  }
+
+  .hero__submit-button {
+    height: 56px;
+    width: 100px;
+  }
 }
