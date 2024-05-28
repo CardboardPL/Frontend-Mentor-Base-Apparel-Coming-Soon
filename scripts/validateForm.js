@@ -1,22 +1,37 @@
 const form = document.querySelector('.hero__form')
 const emailInputElem = document.querySelector('#emailInput');
 const errorMsgContainer = form.querySelector('.hero__form-error-message');
+let isValidEmail = false;
+
+if (emailInputElem.value.length !== 0) {
+  checkEmailValidity();
+}
+
+emailInputElem.addEventListener('input', checkEmailValidity);
 
 form.addEventListener('submit', e => {
   e.preventDefault();
-  const isValidEmail = validateEmail(emailInputElem.value.trim(""));
   
+  if (isValidEmail) {
+    form.reset();
+    return;
+  }
+
+  showError();
+});
+
+function checkEmailValidity() {
+  isValidEmail = validateEmail(emailInputElem.value.trim());
   if (!isValidEmail) {
     showError();
   } else {
     hideError();
-    form.reset();
   }
-})
+}
 
 function validateEmail(email) {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
+  const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return pattern.test(email);
 }
 
 function showError() {
