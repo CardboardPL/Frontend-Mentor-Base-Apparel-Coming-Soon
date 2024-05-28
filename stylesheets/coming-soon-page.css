@@ -165,13 +165,15 @@
   }
 }
 
-/* Medium screen adjustments */
-@media (min-width: 600px) {
+@media (min-width: 400px) {
   .hero__logo {
     width: 9.875rem;
     height: 2.0625rem;
   }
+}
 
+/* Medium screen adjustments */
+@media (min-width: 600px) {
   .hero__header {
     display: flex;
     flex-direction: column;
@@ -229,7 +231,7 @@
   .hero__logo {
     position: absolute;
     top: 4.0625rem;
-    left: 10.3125rem;
+    left: 11.45833333333333vw;
     margin: 0;
     z-index: 100;
   }
@@ -266,9 +268,5 @@
 @media (min-width: 950px) and (max-width: 1335px)  {
   .hero__header {
     padding: 12.875vh 7.34722222222222vw 0 11.45833333333333vw;
-  }
-
-  .hero__logo {
-    left: 11.45833333333333vw;
   }
 }
