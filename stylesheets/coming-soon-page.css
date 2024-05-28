@@ -1,12 +1,14 @@
+/* Base hero section styles */
 .hero {
   display: flex;
   flex-direction: column;
-  font-size: 13px;
+  font-size: 0.8125rem;
   background: linear-gradient(var(--gradient-one));
   width: 100%;
   min-height: 100vh;
 }
 
+/* Background pattern (hidden by default) */
 .hero__bg-pattern {
   display: none;
   position: absolute;
@@ -14,101 +16,115 @@
   right: 0;
   bottom: 0;
   left: 0;
+  width: 100%;
+  object-fit: cover;
   pointer-events: none;
 }
 
+/* Logo styles */
 .hero__logo {
   display: block;
-  margin: 31px 32px 32px 32px;
-  height: 21px;
-  width: 100.55px;
+  margin: 1.9375rem 2rem 2rem 2rem;
+  height: 1.3125rem;
+  width: 6.284375rem;
 }
 
+/* Hero image styles */
 .hero__image {
   background-image: url("../images/hero-mobile.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: auto;
-  height: 250px;
+  width: 100%;
+  height: 15.625rem;
 }
 
+/* Header styles */
 .hero__header {
+  position: relative;
   color: var(--desaturated-red);
   text-align: center;
-  position: relative;
-  padding: 64px 32px;
+  padding: 4rem 2rem;
   overflow: hidden;
 }
 
+/* Title styles */
 .hero__title {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: var(--bold);
   color: var(--dark-grayish-red);
-  letter-spacing: 10.75px;
+  letter-spacing: 0.671875rem;
   line-height: 1.05;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
 }
 
 .hero__title > .u-font-light {
   color: var(--desaturated-red);
 }
 
+/* Description styles */
 .hero__description {
-  letter-spacing: 0.4px;
+  letter-spacing: 0.025rem;
   line-height: 1.7;
-  margin-bottom: 33px;
+  margin-bottom: 2.0625rem;
 }
 
+/* Form wrapper styles */
 .hero__form-wrapper {
   position: relative;
-  border: 1px solid var(--desaturated-red);
-  height: 48px;
-  border-radius: 32px;
-  margin-bottom: 10px;
+  border: 0.0625rem solid var(--desaturated-red);
+  height: 3rem;
+  border-radius: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .hero__form-wrapper:has(.hero__input--invalid)  {
   border-color: var(--soft-red);
-  border-width: 2px;
+  border-width: 0.125rem;
 }
 
 .hero__form-wrapper:has(.hero__input--invalid) 
 .hero__submit-button::before {
   position: absolute;
-  left: -40px;
+  left: -2.125rem;
   content: url("../images/icon-error.svg");
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   pointer-events: none;
 }
 
+/* Input styles */
 .hero__input {
   display: block;
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
-  padding: 0 0 0 25px;
-  width: 80%;
+  padding: 0 0 0 1.5625rem;
+  width: 65%;
   outline: none;
-  color: var(--desaturated-red);
-  font-size: 14px;
-  letter-spacing: 0.583333333px;
+  color: var(--dark-grayish-red);
+  font-size: 0.875rem;
+  letter-spacing: 0.0364583333125rem;
 }
 
+.hero__input::placeholder {
+  color: var(--desaturated-red);
+}
+
+/* Submit button styles */
 .hero__submit-button {
   display: block;
   position: absolute;
-  right: -2px;
+  right: -0.125rem;
   top: 50%;
   transform: translateY(-50%);
   background: linear-gradient(var(--gradient-two));
-  width: 64px;
-  height: 48px;
-  border-radius: 32px;
-  box-shadow: 0 8px 1rem hsla(0, 93%, 68%, 0.3);
+  width: 4rem;
+  height: 3rem;
+  border-radius: 2rem;
+  box-shadow: 0 0.5rem 1rem hsla(0, 93%, 68%, 0.3);
   cursor: pointer;
   transition: 
     background 0.15s ease-in-out,
@@ -118,13 +134,15 @@
 .hero__submit-button:hover,
 .hero__submit-button:focus {
   background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 80%, 86%));
-  box-shadow: 0 12px 1rem hsla(0, 93%, 68%, 0.5);
+  box-shadow: 0 0.75rem 1rem hsla(0, 93%, 68%, 0.5);
 }
 
+/* Error message styles */
 .hero__form-error-message {
+  font-size: 0.8125rem;
   color: var(--soft-red);
   text-align: left;
-  margin-left: 25px;
+  margin-left: 1.5625rem;
 }
 
 .hero__form-error-message--hidden {
@@ -132,7 +150,76 @@
   pointer-events: none;
 }
 
-@media (min-width: 800px) {
+/* Small screen adjustments */
+@media (max-width: 374px) {
+  .hero__input {
+    width: 60%;
+  }
+}
+
+/* Larger mobile screen adjustments */
+@media (min-width: 400px) and (max-width: 949px) {
+  .hero__image {
+    background-position: top;
+    height: 31.25rem;
+  }
+}
+
+/* Medium screen adjustments */
+@media (min-width: 600px) {
+  .hero__logo {
+    width: 9.875rem;
+    height: 2.0625rem;
+  }
+
+  .hero__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 12.875vh 15.34722222222222vw 0 11.45833333333333vw;
+  }
+
+  .hero__title {
+    font-size: 4rem;
+    letter-spacing: 1.0625rem;
+    line-height: 1.075;
+    margin-bottom: 1.225rem;
+  }
+
+  .hero__description {
+    letter-spacing: 0;
+    line-height: 1.75;
+    margin-left: 0.0625rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero__form-wrapper {
+    height: 3.5rem;
+  }
+
+  .hero__input {
+    font-size: 1.0625rem;
+    letter-spacing: -0.0114583333333333rem;
+  }
+
+  .hero__submit-button {
+    height: 3.5rem;
+    width: 6.25rem;
+  }
+  
+  .hero__form-wrapper:has(.hero__input--invalid) 
+  .hero__submit-button::before {
+    left: -2.5rem;
+  }
+
+  .hero__form-error-message {
+    margin-left: 2rem;
+  }
+}
+
+/* Large screen adjustments */
+@media (min-width: 950px) {
   .hero {
     font-size: 1rem;
     flex-direction: row-reverse;
@@ -141,10 +228,8 @@
 
   .hero__logo {
     position: absolute;
-    top: 65px;
-    left: 165px;
-    height: 33px;
-    width: 158px;
+    top: 4.0625rem;
+    left: 10.3125rem;
     margin: 0;
     z-index: 100;
   }
@@ -155,18 +240,12 @@
   }
 
   .hero__image {
-    position: relative;
     background-image: url("../images/hero-desktop.jpg");
     height: 100vh;
-    width: 610px;
+    width: 42.36111111111111%;
   }
 
   .hero__header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
-    padding: 103px 221px 0 165px;
     text-align: left;
   }
 
@@ -174,32 +253,22 @@
     position: relative;
     z-index: 2;
   }
+}
 
-  .hero__title {
-    font-size: 64px;
-    letter-spacing: 17px;
-    line-height: 1.075;
-    margin-bottom: 19.6px;
+/* Specific screen height adjustments */
+@media (max-height: 650px) and (min-width: 1200px) {
+  .hero__logo {
+    top: 2.8125rem;
+  }
+}
+
+/* Medium to large screen adjustments */
+@media (min-width: 950px) and (max-width: 1335px)  {
+  .hero__header {
+    padding: 12.875vh 7.34722222222222vw 0 11.45833333333333vw;
   }
 
-  .hero__description {
-    letter-spacing: 0;
-    line-height: 1.75;
-    margin-left: 1px;
-    margin-bottom: 40px;
-  }
-
-  .hero__form-wrapper {
-    height: 56px;
-  }
-
-  .hero__input {
-    font-size: 17px;
-    letter-spacing: -0.1833333333333333px;
-  }
-
-  .hero__submit-button {
-    height: 56px;
-    width: 100px;
+  .hero__logo {
+    left: 11.45833333333333vw;
   }
 }
